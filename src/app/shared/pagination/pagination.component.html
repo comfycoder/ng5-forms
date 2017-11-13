@@ -1,0 +1,21 @@
+<div aria-label="pagination navigation" *ngIf="totalCount">
+  <div class="page-nav">
+    <ul class="pagination pagination-sm">
+      <li class="page-item"><a class="page-link btn" href="#" (click)="first($event)" tabindex="1" [ngClass]="{disabled:isFirstPage}"><i class="fa fa-fast-backward" aria-hidden="true"></i></a></li>
+      <li class="page-item"><a class="page-link btn" href="#" (click)="previous($event)" tabindex="1" [ngClass]="{disabled:isFirstPage}"><i class="fa fa-backward" aria-hidden="true"></i></a></li>
+      <li class="page-item">
+        <input id="pageNumber" #page type="text" class="form-control form-control-sm page-number" [(value)]="pageInput" (blur)="onBlur($event)" (keydown.enter)="setPageNumber($event)" myInputFilter="numericFormatted" tabindex="1" maxlength="6">&nbsp;
+      </li>
+      <li class="page-item"><a class="page-link btn" href="#" (click)="setPageNumber($event)" tabindex="1">GO</a></li>
+      <li class="page-item"><a class="page-link btn" href="#" (click)="next($event)" tabindex="1" [ngClass]="{disabled:isLastPage}"><i class="fa fa-forward" aria-hidden="true"></i></a></li>
+      <li class="page-item"><a class="page-link btn" href="#" (click)="last($event)" tabindex="1" [ngClass]="{disabled:isLastPage}"><i class="fa fa-fast-forward" aria-hidden="true"></i></a></li>
+    </ul>
+    <div class="page-indicator">
+      <span class="page-shown">Page {{pageNumber}} of {{totalPages}}</span>
+    </div>
+  </div>
+  <div class="records-indicator">
+    <span class="records-shown">Showing {{startItem}} - {{endItem}} of {{totalCount}} items</span>
+  </div>
+  <div class="clearfix"></div>
+</div>

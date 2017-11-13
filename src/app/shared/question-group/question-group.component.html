@@ -1,0 +1,7 @@
+<div class="question-group" *ngIf="question != null">
+    <label [id]='question?.questionName' class="question-group-label">
+      {{question?.questionText}} 
+      <info-button id="{{question?.questionName + 'Info'}}" [content]="question?.helpText"></info-button>
+    </label>
+    <ng-content></ng-content>
+</div>

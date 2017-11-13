@@ -1,0 +1,26 @@
+<div role="group" aria-labelledby="nameForm">
+  <h3 id="nameForm" name="nameForm">Name Input</h3>
+  <form [formGroup]="nameForm" (submit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="firstName">What's your first name? </label>
+      <input class="form-control" id="firstName" name="firstName" 
+        formControlName="firstName" maxlength="30" required aria-required="true">
+      <div id="firstNameAssert" name="firstNameAssert" 
+        class="invalid-feedback" aria-live="assertive"
+        *ngIf="errors?.firstName">{{errors?.firstName}}</div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">What's your last name?</label>
+      <input class="form-control" id="firstName" name="firstName" 
+        formControlName="lastName" maxlength="30" required aria-required="true">
+      <div id="lastNameAssert" name="lastNameAssert" 
+        class="invalid-feedback" aria-live="assertive"
+        *ngIf="errors?.lastName">{{errors?.lastName}}</div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!nameForm.valid">Submit</button>
+  </form>
+  <div class="spacer-15"></div>
+  <div *ngIf="nameForm.value.firstName && nameForm.value.lastName">
+    <h3>Hello {{nameForm.value.firstName}} {{nameForm.value.lastName}}</h3>
+  </div>
+</div>

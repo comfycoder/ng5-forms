@@ -1,0 +1,68 @@
+.page-nav {
+    height: 50px;
+    width: 230px;
+    float: left;
+}
+
+.page-nav li {
+    padding: 1px;
+}
+
+ul.pagination.pagination-sm {
+    height: 15px;
+}
+
+.page-indicator {
+    margin: 0;
+    width: 215px;
+    height: 30px;
+    text-align: center;
+}
+
+.page-shown {
+    font-size: 0.8rem;
+}
+
+.records-indicator {
+    width: 240px;
+    float: right;
+    text-align: right;
+}
+
+.records-shown {
+    font-size: 0.8rem;
+}
+
+.page-commands {
+    margin: 10px 0 0 0;
+}
+
+.page-number {
+    width: 3rem;
+}
+
+@media (max-width: 580px) {
+
+    .btn.pull-left {
+        float: none;  
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;  
+        margin-right: 0px;  
+        min-width: 230px;
+    }
+
+    .btn.pull-right {
+        float: none;  
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;  
+        margin-left: 0px;  
+        min-width: 230px;
+    }
+    
+    .records-indicator {
+        float: none;
+        text-align: left;
+    }
+}
